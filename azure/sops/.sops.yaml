@@ -1,0 +1,11 @@
+creation_rules:
+  # If assuming roles for another account use "arn+role_arn".
+  # See Advanced usage
+  # - path_regex: .*.yaml
+  #   encrypted_regex: ^(data|stringData)$
+  #   azure_keyvault: https://gitopsdemokeyvault.vault.azure.net/keys/sops-key/b7bc85c1a4ef4180be9d1de46725304c
+  - path_regex: \.dev\.yaml$
+    azure_keyvault: https://project-dev-iac.vault.azure.net/keys/project-dev-iac-key/206bb8519bdc416d964cf8cccf690273
+    # azure_kv:
+    #   - resource_id: "/subscriptions/68ed087f-4be0-41e8-a682-b1bce367af23/resourceGroups/project-dev-iac-rg/providers/Microsoft.KeyVault/vaults/project-dev-iac"
+    #     key: "https://project-dev-iac.vault.azure.net/keys/project-dev-iac-key/206bb8519bdc416d964cf8cccf690273"
