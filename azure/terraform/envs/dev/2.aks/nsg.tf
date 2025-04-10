@@ -15,23 +15,23 @@ module "nsg_ingress_controller" {
   security_rules = [
     {
       name                       = "Allow-AppGW-To-Ingress"
-      priority                   = 100
+      priority                   = 120
       direction                  = "Inbound"
       access                     = "Allow"
       protocol                   = "*"
       source_port_range          = "*"
-      destination_port_ranges    = ["80", "443"]
+      destination_port_range     = "*"
       source_address_prefix      = "${azurerm_public_ip.agw_ip.ip_address}/32"
       destination_address_prefix = "*"
     },
     {
       name                       = "Allow-Healthz-AppGW"
-      priority                   = 150
+      priority                   = 130
       direction                  = "Inbound"
       access                     = "Allow"
       protocol                   = "*"
       source_port_range          = "*"
-      destination_port_ranges    = ["80", "443"]
+      destination_port_range     = "*"
       source_address_prefix      = var.vnet.subnet_configuration["agw"].cidr
       destination_address_prefix = "*"
     },
@@ -45,7 +45,7 @@ module "nsg_ingress_controller" {
       destination_port_ranges    = ["80", "443"]
       source_address_prefix      = "*"
       destination_address_prefix = "*"
-    }
+    },
   ]
 
   #subnet association

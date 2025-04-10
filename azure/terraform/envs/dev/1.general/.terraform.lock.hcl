@@ -9,6 +9,14 @@ provider "registry.terraform.io/azure/azapi" {
   ]
 }
 
+provider "registry.terraform.io/carlpett/sops" {
+  version     = "1.2.0"
+  constraints = ">= 0.7.0"
+  hashes = [
+    "h1:CuMhmsOnfw4QH0N7kInsQ7gTSCfNJA40CoCjWOOkxq8=",
+  ]
+}
+
 provider "registry.terraform.io/hashicorp/azuread" {
   version     = "2.53.1"
   constraints = ">= 2.53.1, 2.53.1"

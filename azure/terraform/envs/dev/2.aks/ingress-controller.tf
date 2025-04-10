@@ -95,25 +95,9 @@ resource "helm_release" "nginx_ingress" {
   }
 }
 
-# resource "kubernetes_secret_v1" "agic_tls_secret" {
-
-#   metadata {
-#     name      = "agic-tls-secret"
-#     namespace = "ingress-nginx"
-#   }
-
-#   data = {
-#     "tls.crt" = filebase64("../../../../../k8s/Charts/dashboard/vaan.eragon123app.com.crt")
-#     "tls.key" = filebase64("../../../../../k8s/Charts/dashboard/vaan.eragon123app.com.key")
-#   }
-
-#   type = "kubernetes.io/tls"
-# }
-
 resource "kubernetes_ingress_v1" "agic_to_nginx" {
   depends_on = [
-    helm_release.nginx_ingress,
-    # kubernetes_secret_v1.agic_tls_secret
+    helm_release.nginx_ingress
   ]
 
   metadata {
@@ -128,10 +112,6 @@ resource "kubernetes_ingress_v1" "agic_to_nginx" {
     }
   }
   spec {
-    # tls {
-    #   hosts = ["*.vaan.eragon123app.com"]
-    #   secret_name = "agic-tls-secret"
-    # }
     rule {
       host = "*.vaan.eragon123app.com"
       http {

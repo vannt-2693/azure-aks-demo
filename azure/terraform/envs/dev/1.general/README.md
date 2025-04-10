@@ -9,6 +9,7 @@
 | <a name="requirement_azapi"></a> [azapi](#requirement\_azapi) | = 1.13.1 |
 | <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | = 2.53.1 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | = 4.23.0 |
+| <a name="requirement_sops"></a> [sops](#requirement\_sops) | >= 0.7.0 |
 | <a name="requirement_template"></a> [template](#requirement\_template) | ~> 2.0 |
 
 ## Providers
@@ -17,6 +18,7 @@
 |------|---------|
 | <a name="provider_azuread"></a> [azuread](#provider\_azuread) | 2.53.1 |
 | <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.23.0 |
+| <a name="provider_sops"></a> [sops](#provider\_sops) | 1.2.0 |
 
 ## Modules
 
@@ -25,6 +27,7 @@
 | <a name="module_acr_api"></a> [acr\_api](#module\_acr\_api) | ../../../modules/acr | n/a |
 | <a name="module_dns_zone"></a> [dns\_zone](#module\_dns\_zone) | git@github.com:framgia/sun-infra-iac.git//modules/dns-zone | terraform-azure-dns-zone_v0.0.1 |
 | <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git@github.com:framgia/sun-infra-iac.git//modules/resource-group | terraform-azure-resource-group_v0.0.3 |
+| <a name="module_secrets"></a> [secrets](#module\_secrets) | git@github.com:framgia/sun-infra-iac.git//modules/key-vault | terraform-azure-key-vault_v0.0.1 |
 | <a name="module_vnet"></a> [vnet](#module\_vnet) | git@github.com:framgia/sun-infra-iac.git//modules/vnet | terraform-azure-vnet_v0.0.2 |
 
 ## Resources
@@ -33,6 +36,7 @@
 |------|------|
 | [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.53.1/docs/data-sources/client_config) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.23.0/docs/data-sources/client_config) | data source |
+| [sops_file.secret_variables](https://registry.terraform.io/providers/carlpett/sops/latest/docs/data-sources/file) | data source |
 
 ## Inputs
 
@@ -55,6 +59,7 @@
 |------|-------------|
 | <a name="output_acr_api_id"></a> [acr\_api\_id](#output\_acr\_api\_id) | ID of ACR |
 | <a name="output_azure_account_info"></a> [azure\_account\_info](#output\_azure\_account\_info) | Show information about project, environment, and account |
+| <a name="output_dns_zone_id"></a> [dns\_zone\_id](#output\_dns\_zone\_id) | ID of DNS Zone |
 | <a name="output_nat_gw_public_ip"></a> [nat\_gw\_public\_ip](#output\_nat\_gw\_public\_ip) | The Public IP of the NAT Gateway AKS. |
 | <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | Name of resource group |
 | <a name="output_subnet_agw_id"></a> [subnet\_agw\_id](#output\_subnet\_agw\_id) | ID of subnet Application Gateway |

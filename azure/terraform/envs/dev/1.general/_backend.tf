@@ -13,6 +13,10 @@ terraform {
       source  = "hashicorp/azuread"
       version = "= 2.53.1"
     }
+    sops = {
+      source  = "carlpett/sops"
+      version = ">= 0.7.0"
+    }
     azapi = {
       source  = "azure/azapi"
       version = "= 1.13.1"

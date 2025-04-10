@@ -39,3 +39,7 @@ output "nat_gw_public_ip" {
   value       = module.vnet.nat_gateway_ips["natgw"].public_ip
   description = "The Public IP of the NAT Gateway AKS."
 }
+output "dns_zone_id" {
+  value       = module.dns_zone.dns_zone_id
+  description = "ID of DNS Zone"
+}

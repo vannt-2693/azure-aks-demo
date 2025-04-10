@@ -17,7 +17,10 @@ module "aks_cluster" {
     dns_prefix                = var.aks.dns_prefix
     automatic_upgrade_channel = null
     api_server_access_profile = {
-      authorized_ip_ranges = concat(var.global_ips.sun_hni_server, "${data.terraform_remote_state.general.outputs.nat_gw_public_ip}/32")
+      authorized_ip_ranges = concat(
+        var.global_ips.sun_hni_server,
+        ["${data.terraform_remote_state.general.outputs.nat_gw_public_ip}/32"]
+      )
     }
     network_profile = {
       network_plugin = var.aks.network_profile.network_plugin
@@ -33,6 +36,7 @@ module "aks_cluster" {
       node_count     = var.aks.default_node_pool.node_count
       vm_size        = var.aks.default_node_pool.vm_size
       vnet_subnet_id = data.terraform_remote_state.general.outputs.subnet_aks_id
+      max_pods       = 100
       upgrade_settings = {
         max_surge = 20
       }
@@ -60,6 +64,7 @@ module "aks_cluster" {
       os_type                     = "Linux"
       mode                        = "User"
       temporary_name_for_rotation = "worker2"
+      max_pods                    = 100
       tags                        = local.default_tags
     },
   ]

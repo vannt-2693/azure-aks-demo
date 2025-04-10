@@ -11,7 +11,7 @@ module "storage_contents_private_dns_zone" {
 
   #redis_private_dns_zone
   private_dns_zone = {
-    name = "privatelink.contents.core.windows.net"
+    name = "privatelink.blob.core.windows.net"
   }
 
   #virtual_network_link

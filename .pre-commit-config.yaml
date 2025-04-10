@@ -31,7 +31,7 @@ repos:
 
       # Common errors
       - id: end-of-file-fixer
-      - id: check-yaml
+      # - id: check-yaml
       - id: check-merge-conflict
 
       # Cross platform

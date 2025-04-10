@@ -18,8 +18,8 @@ vnet = {
   vnet_cidr = "10.1.0.0/16"
   subnet_configuration = {
     aks = {
-      cidr = "10.1.0.0/21"
-      # default_outbound_access_enabled = false
+      cidr                            = "10.1.0.0/21"
+      default_outbound_access_enabled = false
     }
     agw = {
       cidr = "10.1.8.0/24"

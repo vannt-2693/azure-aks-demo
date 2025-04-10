@@ -28,6 +28,7 @@
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_aks_cluster"></a> [aks\_cluster](#module\_aks\_cluster) | git@github.com:framgia/sun-infra-iac.git//modules/aks | terraform-azure-aks_v0.0.1 |
+| <a name="module_dns_record"></a> [dns\_record](#module\_dns\_record) | git@github.com:framgia/sun-infra-iac.git//modules/dns-zone | terraform-azure-dns-zone_v0.0.1 |
 | <a name="module_nsg_ingress_controller"></a> [nsg\_ingress\_controller](#module\_nsg\_ingress\_controller) | git@github.com:framgia/sun-infra-iac.git//modules/nsg | terraform-azure-nsg_v0.0.1 |
 
 ## Resources
@@ -37,13 +38,13 @@
 | [azurerm_application_gateway.agw](https://registry.terraform.io/providers/hashicorp/azurerm/4.23.0/docs/resources/application_gateway) | resource |
 | [azurerm_public_ip.agw_ip](https://registry.terraform.io/providers/hashicorp/azurerm/4.23.0/docs/resources/public_ip) | resource |
 | [helm_release.cert_manager](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [helm_release.external_secrets](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
+| [helm_release.local_app](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 | [helm_release.nginx_ingress](https://registry.terraform.io/providers/hashicorp/helm/latest/docs/resources/release) | resource |
 | [kubernetes_ingress_v1.agic_to_nginx](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/ingress_v1) | resource |
-| [kubernetes_ingress_v1.demo_ing](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/ingress_v1) | resource |
 | [kubernetes_namespace.cert_manager](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_namespace.demo_example](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
-| [kubernetes_pod.demo_aspnet_app](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/pod) | resource |
-| [kubernetes_service.demo_svc](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/service) | resource |
+| [kubernetes_namespace.external_secrets](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
+| [kubernetes_namespace.ns_app](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/namespace) | resource |
 | [azuread_client_config.current](https://registry.terraform.io/providers/hashicorp/azuread/2.53.1/docs/data-sources/client_config) | data source |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/4.23.0/docs/data-sources/client_config) | data source |
 | [sops_file.secret_variables](https://registry.terraform.io/providers/carlpett/sops/latest/docs/data-sources/file) | data source |
